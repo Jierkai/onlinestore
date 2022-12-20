@@ -1,17 +1,13 @@
 <template>
   <div id="app">
-    <LayoutViews></LayoutViews>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import LayoutViews from "@/views/Layout/LayoutViews.vue";
 
 export default {
   name: 'App',
-  components: {
-    LayoutViews
-  }
 }
 </script>
 

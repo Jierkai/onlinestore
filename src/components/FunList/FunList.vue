@@ -1,5 +1,5 @@
 <template>
-  <van-grid :border="false" :column-num="5" :icon-size="35">
+  <van-grid :border="false" :column-num="5" :gutter="0" :icon-size="35">
     <van-grid-item v-for="item in list" :key="item.id" :icon="item.imgUrl" :text="item.title">
     </van-grid-item>
   </van-grid>

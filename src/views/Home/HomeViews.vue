@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @scroll="changeOpacity">
     <HeaderNav>
       <template #left>
         <van-icon name="wap-nav" size="25"/>
@@ -25,6 +25,9 @@
     </van-row>
     <FunList></FunList>
     <QuickBuy></QuickBuy>
+    <div>
+      <img src="./image/haoHuoQiang.a976e93f.gif" style="width: 100%">
+    </div>
   </div>
 </template>
 
@@ -42,6 +45,11 @@ export default {
     return {
       opacity: '0',
       activeImgList: []
+    }
+  },
+  methods: {
+    changeOpacity(e) {
+      console.log(e)
     }
   },
   async created() {

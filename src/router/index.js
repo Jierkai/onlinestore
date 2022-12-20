@@ -6,22 +6,38 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    redirect: "/home",
+    redirect: "/layout/home",
   },
   {
-    name: "home",
-    path: "/home",
-    component: () => import("@/views/Home/HomeViews.vue"),
+    path: "/layout",
+    component: () => import("@/views/Layout/LayoutViews.vue"),
+    children: [
+      {
+        name: "home",
+        path: "home",
+        component: () => import("@/views/Home/HomeViews.vue"),
+      },
+      {
+        name: "cart",
+        path: "cart",
+        component: () => import("@/views/Cart/CartViews.vue"),
+      },
+      {
+        name: "user",
+        path: "user",
+        component: () => import("@/views/User/UserViews.vue"),
+      },
+    ],
   },
   {
-    name: "cart",
-    path: "/cart",
-    component: () => import("@/views/Cart/CartViews.vue"),
+    name: "login",
+    path: "/login",
+    component: () => import("@/views/LoginView/LoginView.vue"),
   },
   {
-    name: "user",
-    path: "/user",
-    component: () => import("@/views/User/UserViews.vue"),
+    name: "register",
+    path: "/register",
+    component: () => import("@/views/RegisterView/RegisterView.vue"),
   },
 ];
 

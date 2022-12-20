@@ -6,6 +6,7 @@ import Vant from "vant";
 import "vant/lib/index.css";
 import "swiper/css/swiper.css";
 import "@/mock/mockServer";
+import "@/assets/base.less";
 
 Vue.use(Vant);
 

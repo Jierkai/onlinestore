@@ -1,0 +1,80 @@
+// out: false
+
+// 移动端默认样式
+//rem默认基础样式
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+// 取消左右进度条
+body {
+  overflow-x: hidden;
+  // 令默认文本颜色为纯黑色
+  color: #000;
+  // 添加左右白边
+  padding: 0 .1333rem;
+  // 令文本字体更清晰
+  -webkit-font-smoothing: antialiased;
+
+  // 文本字体样式初始化
+  font: 16px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  //   清除超链接点击高亮效果
+  -webkit-tap-highlight-color: transparent;
+}
+
+// 设置图片默认样式
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+input[type="text"],
+input[type="search"] {
+  outline: 0;
+  border: 0;
+}
+
+button {
+  border: 0;
+}
+
+i {
+  // 将i标签设置为正常
+  font-style: normal;
+}
+
+// 清除浮动样式
+.clearFix::after {
+  visibility: hidden;
+  content: '';
+  clear: both;
+  display: block;
+  height: 0;
+}
+
+.clearFix {
+  *zoom: 1;
+}
+
+// 测试样式
+.b {
+  // 显示盒子位置
+  border: 1px solid;
+}
+
+.none,
+.hide {
+  display: none;
+}
