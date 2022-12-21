@@ -1,12 +1,12 @@
 <template>
   <div class="user-views">
-    <HeaderNav>
+    <HeaderNav bg-color="rgba(255,255,255,1)">
       <template #mid>
-        <h4 style="text-align: center">个人中心</h4>
+        <span style="text-align: center">个人中心</span>
       </template>
     </HeaderNav>
     <van-cell-group>
-      <van-cell center title="登录/注册">
+      <van-cell :to="{name:'login'}" center title="登录/注册">
         <template #icon>
           <van-image
               :src="require('./image/下载.png')"
@@ -35,6 +35,6 @@ export default {
 
 <style scoped>
 .user-views {
-  padding-top: 54px;
+  padding-top: 60px;
 }
 </style>

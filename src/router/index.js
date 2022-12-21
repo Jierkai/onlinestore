@@ -32,12 +32,23 @@ const routes = [
   {
     name: "login",
     path: "/login",
-    component: () => import("@/views/LoginView/LoginView.vue"),
+    component: () => import("@/views/Login/LoginView.vue"),
   },
   {
     name: "register",
     path: "/register",
-    component: () => import("@/views/RegisterView/RegisterView.vue"),
+    component: () => import("@/views/Register/RegisterView.vue"),
+  },
+  {
+    name: "allgoods",
+    path: "/allgoods",
+    component: () => import("@/views/AllGoodsList/AllGoodsList.vue"),
+  },
+  {
+    name: "goodsdetail",
+    path: "/goodsdetail/:goodsId",
+    props: true,
+    component: () => import("@/components/GoodsDetail/GoodsDatail.vue"),
   },
 ];
 

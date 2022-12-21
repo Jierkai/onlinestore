@@ -1,17 +1,26 @@
 <template>
-  <div class="header-nav">
-    <slot name="left"></slot>
+  <div :style="{'background': bgColor}" class="header-nav">
+    <slot name="left">
+      <span></span>
+    </slot>
     <slot name="mid"></slot>
-    <slot name="right"></slot>
+    <slot name="right">
+      <span></span>
+    </slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HeaderNav"
+  name: "HeaderNav",
+  props: {
+    bgColor: {
+      type: String,
+      default: 'rgba(255,255,255,0)'
+    }
+  }
 }
 </script>
-
 <style lang="less" scoped>
 .header-nav {
   position: fixed;
@@ -28,7 +37,4 @@ export default {
   padding: 0;
 }
 
-.header-nav :first-child, :last-child {
-  margin: 0 4px;
-}
 </style>

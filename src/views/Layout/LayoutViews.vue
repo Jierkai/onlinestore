@@ -1,6 +1,8 @@
 <template>
   <div class="layout-view">
-    <router-view/>
+    <transition name="layout">
+      <router-view/>
+    </transition>
     <van-tabbar route>
       <van-tabbar-item :to="{name:'home'}" icon="home-o">主页</van-tabbar-item>
       <van-tabbar-item :to="{name:'cart'}" icon="shopping-cart-o">购物车</van-tabbar-item>
@@ -19,5 +21,13 @@ export default {
 .layout-view {
   padding-bottom: 50px;
   background: #eeeeee;
+}
+
+.layout-enter-active, .layout-enter-leave {
+  transition: opacity .5s;
+}
+
+.layout-enter, .layout-leave {
+  opacity: 0;
 }
 </style>

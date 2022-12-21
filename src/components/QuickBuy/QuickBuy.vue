@@ -8,35 +8,45 @@
         <div class="count-down">
           <div class="count-down-left">16点场</div>
           <div class="count-down-right">
-            <!--            <van-count-down :time="time"/>-->
-            <span style="color: #ee0a24">活动已结束</span>
+            <van-count-down v-if="time>0" :time="time"/>
+            <span v-else style="color: #ee0a24">活动已结束</span>
           </div>
         </div>
       </van-col>
     </van-row>
     <div class="quick-list">
-      <div class="list-item">
+      <div v-for="item in quickGoodList" :key="item.id" class="list-item">
         <van-image
-            src="https://img01.yzcdn.cn/vant/cat.jpeg"
+            :src="item.icon"
             width="100%"
         />
-        <p class="new-price">￥111</p>
-        <p class="old-price">￥111</p>
+        <p class="new-price">￥{{ item.price }}</p>
+        <p class="old-price">￥{{ item.oldPrice }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import {quick} from "@/api";
+
 export default {
   name: "QuickBuy",
   data() {
-    return {}
+    return {
+      quickGoodList: []
+    }
   },
   computed: {
     time() {
-      return 3000
+      // 获取当前日期的时间戳
+      const timeStr = new Date(`${new Date().toLocaleDateString()} 16:00:00`).getTime()
+      return timeStr - +new Date()
     }
+  },
+  async created() {
+    let res = await quick()
+    this.quickGoodList = [...res.data.data.list]
   }
 }
 </script>

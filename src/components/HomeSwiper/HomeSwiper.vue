@@ -26,7 +26,6 @@ export default {
   },
   async created() {
     let res = await swiper()
-    console.log(res)
     this.imgList = [...res.data.data.list]
   }
 }

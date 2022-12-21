@@ -17,7 +17,6 @@ export default {
   },
   async created() {
     let res = await fnlist()
-    console.log(res)
     this.list = [...res.data.data]
   }
 }

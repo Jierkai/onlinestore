@@ -22,3 +22,16 @@ export const fnlist = () =>
     url: "/fnlist",
     method: "get",
   });
+export const goods = () =>
+  request({
+    url: "/goods",
+    method: "get",
+  });
+export const goodsdetail = (params) =>
+  request({
+    url: "/goodsDetail",
+    method: "get",
+    params: {
+      goodsId: params,
+    },
+  });
