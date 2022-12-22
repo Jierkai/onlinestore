@@ -34,7 +34,6 @@ export default {
 
 .header-nav :nth-child(2) {
   flex: 1;
-  padding: 0;
 }
 
 </style>
