@@ -20,7 +20,6 @@ export default {
 <style scoped>
 .layout-view {
   padding-bottom: 50px;
-  background: #eeeeee;
 }
 
 .layout-enter-active, .layout-enter-leave {

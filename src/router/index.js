@@ -50,6 +50,12 @@ const routes = [
     props: true,
     component: () => import("@/components/GoodsDetail/GoodsDatail.vue"),
   },
+  {
+    name: "settlement",
+    path: "/settlement/:goodsId",
+    props: true,
+    component: () => import("@/components/Settlement/SettlementPage.vue"),
+  },
 ];
 
 export default new VueRouter({

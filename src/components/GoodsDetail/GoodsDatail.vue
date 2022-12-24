@@ -94,7 +94,7 @@
       <van-goods-action-icon/>
       <van-goods-action-icon/>
       <van-goods-action-button text="加入购物车" type="warning" @click="toCart"/>
-      <van-goods-action-button text="立即购买" type="danger"/>
+      <van-goods-action-button text="立即购买" type="danger" @click="toSettlement"/>
     </van-goods-action>
   </div>
 </template>
@@ -147,6 +147,10 @@ export default {
     toCart() {
       this.$store.commit('ADDGOODS', this.goodsInfo)
       this.$router.push({name: 'cart'})
+    },
+    toSettlement() {
+      this.$store.commit('ADDGOODS', this.goodsInfo)
+      this.$router.push({name: 'settlement'})
     }
   },
   mounted() {

@@ -30,11 +30,13 @@ export default new vuex.Store({
     ADDGOODS(state, data) {
       const cartList = state.cartList;
       let index = 0;
-      const isIncludes = cartList.every(
-        (i) => i.goodsInfo.id !== data.id && index++
-      );
+      const isIncludes = cartList.every((i) => {
+        index++;
+        return i.goodsInfo.id !== data.id;
+      });
+      console.log(isIncludes);
       if (isIncludes) {
-        cartList.push({ goodsInfo: data, num: 1 });
+        cartList.push({ goodsInfo: data, num: 1, isChoose: false });
       } else {
         cartList[index].num++;
       }
